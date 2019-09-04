@@ -88,6 +88,23 @@ const data = [
   }
 ];
 
+const content = {
+  "title": "Custom Content",
+  "date": "September 4th, 2019",
+  "firstParagraph": `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    "secondParagraph": `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    "thirdParagraph": `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+
+}
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
@@ -127,6 +144,7 @@ articleMaker = ({title, date, firstParagraph, secondParagraph, thirdParagraph}) 
   pFirst.textContent = firstParagraph;
   pSecond.textContent = secondParagraph;
   pThird.textContent = thirdParagraph;
+  button.textContent = "Toggle Display";
 
   container.classList.add("article");
   pDate.classList.add("date");
@@ -143,3 +161,11 @@ articleMaker = ({title, date, firstParagraph, secondParagraph, thirdParagraph}) 
 
   return container;
 }
+
+
+let article = document.querySelector(".articles")
+data.map(a => article.append(articleMaker(a)));
+
+
+const newArticle = articleMaker(content);
+article.prepend(newArticle);
