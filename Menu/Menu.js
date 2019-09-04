@@ -47,7 +47,11 @@ menuCreator = links => {
   div.classList.add("menu");
   const menu = document.querySelector(".menu-button");
  
-  menu.addEventListener("click", () => div.classList.toggle("menu--open"));
+  menu.addEventListener("click", () => {
+    div.classList.toggle("menu--open");
+    div.classList.toggle("menu--animated");
+    document.querySelectorAll(".menu ul li").forEach(li =>  li.classList.toggle("font-increase"));
+  });
    return div;
 }
 menuCreator

@@ -88,6 +88,30 @@
 .menu--open {
   display: block;
 }
+.menu--animated {
+  animation: expand 1s ease-in-out;
+}
+.font-increase {
+  animation: increase 1s ease-in-out;
+}
+@keyframes expand {
+  from {
+    width: 0px;
+    font-size: 0 !important;
+  }
+  to {
+    width: 350px;
+    font-size: 32px;
+  }
+}
+@keyframes increase {
+  from {
+    font-size: 0;
+  }
+  to {
+    font-size: 32px;
+  }
+}
 /* It is important to note, you will not be writing any CSS in this file*/
 .header {
   width: 100%;
