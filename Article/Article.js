@@ -222,3 +222,22 @@ data.map(a => article.append(articleMaker(a)));
 
 const newArticle = articleMaker(content);
 article.prepend(newArticle);
+
+
+//Create Article
+
+createArticle = (event) => {
+  event.preventDefault();
+  const title = document.querySelector("#title").value;
+  const date = document.querySelector("#date").value;
+  const p1 = document.querySelector("#p1").value;
+  const p2 = document.querySelector("#p2").value;
+  const p3 = document.querySelector("#p3").value;
+  const newArticle = articleMaker({title, date, p1, p2, p3});
+  let article = document.querySelector(".articles");
+  
+  article.prepend(newArticle);
+}
+
+const submit = document.querySelector("#submit");
+submit.addEventListener("click", createArticle);

@@ -66,6 +66,6 @@ menuCreator = links => {
   });
    return div;
 }
-menuCreator
+
 document.querySelector('body').appendChild(menuCreator(menuItems));
 

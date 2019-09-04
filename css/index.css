@@ -72,6 +72,10 @@
 .clickButton {
   display: none;
 }
+.articleCreator {
+  text-align: center;
+  width: 100%;
+}
 .menu-button {
   position: absolute;
   left: 20px;
