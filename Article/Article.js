@@ -186,6 +186,7 @@ articleMaker = ({title, date, firstParagraph, secondParagraph, thirdParagraph}) 
   const pSecond = document.createElement("p");
   const pThird = document.createElement("p");
   const button = document.createElement("span");
+  const close = document.createElement("button");
 
   h2Element.textContent = title;
   pDate.textContent = date;
@@ -193,12 +194,15 @@ articleMaker = ({title, date, firstParagraph, secondParagraph, thirdParagraph}) 
   pSecond.textContent = secondParagraph;
   pThird.textContent = thirdParagraph;
   button.textContent = "Toggle Display";
+  close.textContent = "X";
 
   container.classList.add("article");
   pDate.classList.add("date");
   button.classList.add("expandButton");
+  close.classList.add("close");
 
   button.addEventListener("click", () => container.classList.toggle("article-open"));
+  close.addEventListener("click", (e) => e.target.parentElement.classList.add("clickButton") );
 
   container.appendChild(h2Element);
   container.appendChild(pDate);
@@ -206,6 +210,7 @@ articleMaker = ({title, date, firstParagraph, secondParagraph, thirdParagraph}) 
   container.appendChild(pSecond);
   container.appendChild(pThird);
   container.appendChild(button);
+  container.appendChild(close);
 
   return container;
 }

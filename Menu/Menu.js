@@ -52,7 +52,20 @@ menuCreator = links => {
     div.classList.toggle("menu--animated");
     document.querySelectorAll(".menu ul li").forEach(li =>  li.classList.toggle("font-increase"));
   });
+
+
+  document.querySelectorAll('.article').forEach(element => {
+    addEventListener("click", (e) => {
+      // e.stopPropagation();
+      console.log("test");
+      div.classList.remove("menu--open");
+      div.classList.remove("menu--animated");
+      div.classList.add("menu--close");
+  })
+    // document.querySelectorAll(".menu ul li").forEach(li =>  li.classList.toggle("font-increase"));
+  });
    return div;
 }
 menuCreator
 document.querySelector('body').appendChild(menuCreator(menuItems));
+

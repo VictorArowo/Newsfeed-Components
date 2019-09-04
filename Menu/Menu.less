@@ -32,6 +32,10 @@
   
 }
 
+.menu--close{
+  animation: close 1s ease-in-out;
+}
+
 .font-increase{
   animation: increase 1s ease-in-out;
 }
@@ -39,11 +43,9 @@
 @keyframes expand {
   from{
     width: 0px;
-    font-size: 0 !important;
   }
   to{
     width: 350px;
-    font-size: 32px;
   }
 }
 
@@ -53,5 +55,11 @@
   }
   to{
     font-size: 32px;
+  }
+}
+
+@keyframes close {
+  to{
+    width: 0;
   }
 }
