@@ -228,8 +228,11 @@ article.prepend(newArticle);
 
 createArticle = (event) => {
   event.preventDefault();
+
+  const dateOptions = {year: 'numeric', month: 'long', day: 'numeric' };
+
   const title = document.querySelector("#title").value;
-  const date = document.querySelector("#date").value;
+  const date = new Date(document.querySelector("#date").value).toLocaleDateString("en-US", dateOptions);
   const p1 = document.querySelector("#p1").value;
   const p2 = document.querySelector("#p2").value;
   const p3 = document.querySelector("#p3").value;
@@ -237,6 +240,12 @@ createArticle = (event) => {
   let article = document.querySelector(".articles");
   
   article.prepend(newArticle);
+
+document.querySelector("#title").value = "";
+document.querySelector("#date").value = "";
+document.querySelector("#p1").value = "";
+document.querySelector("#p2").value = "";
+document.querySelector("#p3").value = "";
 }
 
 const submit = document.querySelector("#submit");
